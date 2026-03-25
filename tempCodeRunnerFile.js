@@ -5,24 +5,32 @@ let segundoValor = Number(prompt("Ingrese el 2do numero :"));
 let tercerValor = Number(prompt("Ingrese el 3er numero :"));
 
 let mayor;
-if (primerValor >= segundoValor && primerValor >= tercerValor) {
+if (primerValor > segundoValor && primerValor > tercerValor) {
     mayor = primerValor;
-} else if (segundoValor >= primerValor && segundoValor >= tercerValor) {
+} else if (segundoValor > primerValor && segundoValor > tercerValor) {
     mayor = segundoValor;
 } else {
     mayor = tercerValor;
 }
 
 let menor;
-if (primerValor <= segundoValor && primerValor <= tercerValor) {
+if (primerValor < segundoValor && primerValor < tercerValor) {
     menor = primerValor;
-} else if (segundoValor <= primerValor && segundoValor <= tercerValor) {
+} else if (segundoValor < primerValor && segundoValor < tercerValor) {
     menor = segundoValor;
 } else {
     menor = tercerValor;
 }
 
-let medio = primerValor + segundoValor + tercerValor - mayor - menor;
+let medio;
+if (primerValor !== mayor && primerValor !== menor) {
+    medio = primerValor;
+} else if (segundoValor !== mayor && segundoValor !== menor) {
+    medio = segundoValor;
+} else {
+    medio = tercerValor;
+}
+
 
 if (primerValor === segundoValor && segundoValor === tercerValor) {
     console.log("Los tres números son iguales");
